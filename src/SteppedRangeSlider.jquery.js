@@ -74,29 +74,29 @@
       return nearest;
     }
     
-    this.getRealValue = function(sliderValue) {
+    this.getRealValue = function(slider_value) {
       for (var i = 0; i < $opts.slider_values.length; i++) {
-        if ($opts.slider_values[i] >= sliderValue) {
+        if ($opts.slider_values[i] >= slider_value) {
           return $opts.true_values[i];
         }
       }
       return 0;
     }
     
-    this.getDisplayMask = function(sliderValue) {
+    this.getDisplayMask = function(slider_value) {
       for (var i = 0; i < $opts.slider_values.length; i++) {
-        if ($opts.slider_values[i] >= sliderValue) {
+        if ($opts.slider_values[i] >= slider_value) {
           // check if a display_unit has been given
-          if(typeof $opts.display_unit != "undefined") {
+          if(typeof $opts.display_masks != "undefined" && $opts.display_masks.length > 0) {
+            // find the display_mask values, or return a zero
+            return $opts.display_masks[i] || 0;
+          } else if(typeof $opts.display_unit != "undefined") {
             //find the true value and add check if the display_unit_placement has been set to "after", if not default to "before"
             var true_value = $opts.true_values[i];
             return $opts.display_unit_place && $opts.display_unit_place == "after" ? true_value + $opts.display_unit : $opts.display_unit + true_value;
-          } else if(typeof $opts.display_masks != "undefined" && $opts.display_masks.length > 0) {
-            // find the display_mask values, or return a zero
-            return $opts.display_masks[i] || 0;
           } else {
             //if no masks or unit values given, just show the display value
-            return $obj.getRealValue(sliderValue);
+            return $obj.getRealValue(slider_value);
           }
         }
       }
