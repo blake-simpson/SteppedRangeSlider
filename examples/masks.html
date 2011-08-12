@@ -16,8 +16,10 @@
   <div id="wrapper">
     <h1>Stepped Range Slider: Units and Masks</h1>
     <p>Please view source code for details. Here you will learn a simple method of adding units (such as $ or %) to your true slider values.</p>
-    <p>In addition to this, adding display masks, which present a custom value to the user while preserving the 
-    real value for your hidden input fields will be demonstrated.</p>
+    <p>For further control, adding a display mask will present a custom value to the user while preserving the 
+    real value for your hidden input fields.</p>
+    
+    <p>Display units and masks <strong>cannot</strong> be used togeather. Masks will take precedence over a unit.</p>
     
     <script>
     $(function() {
@@ -71,7 +73,7 @@
     
     <div class="slider_wrapper">
       <h2>Simple Units: After: %</h2>
-      <p>Add the option: <strong>display_unit: "%"</strong> and <strong>display_unit_place: "after"</strong></p>
+      <p>Add the options: <strong>display_unit: "%"</strong> and <strong>display_unit_place: "after"</strong></p>
       
       <div class="display_value_area_two display_area"></div> <!-- Values are displayed here-->
       
@@ -107,7 +109,7 @@
     <div class="slider_wrapper">
       <h2>Display Masks</h2>
       <p>Add the option: <strong>display_masks: <i>mask_array</i></strong></p>
-      <p>An array of "masks" may be provided, that will be displayed to the user, while any hidden text fields still get the true values</p>
+      <p>An array of "masks" may be provided which will be displayed on the page, while any input fields still recieve the true values</p>
       <p>In addtion, a custom <strong>divider</strong> can be set, using: <strong>divider: " up to "</strong></p>
       
       <div class="display_value_area_three display_area"></div> <!-- Values are displayed here-->
