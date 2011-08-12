@@ -1,0 +1,84 @@
+h1. SteppedRangeSlider
+
+h2. SteppedRangeSlider is a jQuery plugin allowing creation of jQuery UI slider elements with non-linear steps.
+
+The default jQuery UI slider step values must move in fixed steps, whilst this script allows you to define:
+
+* Slider values (Actual scale the slider will step to) [Required]
+* True values (What will be populated in to your hidden fields) [Required]
+* Display Masks (What will be presented to the user at each step)
+* Display Units (A unit such as $ or % that can be shown before or after the display value)
+
+h2. Basic code
+
+<pre>
+  //Slider values array should start with Zero (0). Steps in between are how far the handle will jump in relation to the next step
+  slider_values_array = [0,1,2,3,4,5,6,7,8,9];
+  
+  //True values are what are used to fill in hidden fields
+  true_values_array   = [1,2,4,8,16,32,64,128,256,512];
+  
+  //Initiate the stepped range slider
+  $("#slider_simple").steppedRangeSlider({
+    slider_values: slider_values_array,
+    true_values: true_values_array
+  });
+</pre>
+
+h2. Add your hidden fields
+
+<pre>
+  //Setup Slider values
+  slider_values_array = [0,1,2,3,4,5,6,7,8,9];
+  true_values_array   = [1,2,4,8,16,32,64,128,256,512];
+  
+  //Initiate the stepped range slider
+  $("#slider_hidden_fields").steppedRangeSlider({
+    slider_values: slider_values_array,
+    true_values: true_values_array,
+    //add your hidden field IDs without the # symbol
+    hidden_fields: ["hidden1", "hidden2"]
+  });
+</pre>
+
+h2. Preset values
+
+<pre>
+  //Setup Slider values
+  slider_values_array = [0,1,2,3,4,5,6,7,8,9];
+  true_values_array   = [1,2,4,8,16,32,64,128,256,512];
+  
+  //Initiate the stepped range slider
+  $("#slider_hidden_fields").steppedRangeSlider({
+    slider_values: slider_values_array,
+    true_values: true_values_array,
+    
+    //These are values found in the slider_values_array
+    values: [1,5]
+  });
+</pre>
+
+
+h2. Display true value on page
+
+<pre>
+  //Setup Slider values
+  slider_values_array = [0,1,2,3,4,5,6,7,8,9];
+  true_values_array   = [1,2,4,8,16,32,64,128,256,512];
+  
+  //Initiate the stepped range slider
+  $("#slider_hidden_fields").steppedRangeSlider({
+    slider_values: slider_values_array,
+    true_values: true_values_array,
+    
+    //Give the class name of a div that will be populated with true slider values, without the "." symbol
+    display_area_class: 'my_display_area'
+  });
+  
+  <div class="my_display_area"></div>
+  
+</pre>
+
+h2. More examples
+
+For more examples, please see *simple.html* and *masks.html* in the /examples/ folder

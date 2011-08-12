@@ -1,8 +1,0 @@
-SteppedRangeSlider is a jQuery plugin allowing creation of jQuery UI slider elements with non-linear steps.
-
-The default jQuery UI slider step values must move in fixed steps, whilst this script allows you to define:
-
-  Slider values (Actual scale the slider will step to) [Required]
-  True values (What will be populated in to your hidden fields) [Required]
-  Display Masks (What will be presented to the user at each step)
-  Display Units (A unit such as $ or % that can be shown before or after the display value)
