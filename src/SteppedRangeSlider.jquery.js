@@ -6,7 +6,7 @@
        var $obj = this;
        // default options
        var $opts = {
-         divider: " - ",
+         divider: " - "
        }
        
        //add the custom options to the $opts hash
