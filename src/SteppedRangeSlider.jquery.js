@@ -54,7 +54,6 @@
            return nearest;
        }
        
-       //credit to: Alconja - http://stackoverflow.com/questions/967372/jquery-slider-how-to-make-step-size-change
        this.getRealValue = function(sliderValue) {
            for (var i = 0; i < $opts.slider_values.length; i++) {
                if ($opts.slider_values[i] >= sliderValue) {
@@ -69,10 +68,10 @@
          {
            if ($opts.slider_values[i] >= sliderValue) 
            {
-             if(typeof $opts.display_unit != "undefined" && $opts.display_unit.length == 2)
+             if(typeof $opts.display_unit != "undefined")
              {
                var true_value = $opts.true_values[i];
-               return $opts.display_unit[0] == "before" ? $opts.display_unit[1] + true_value : true_value + $opts.display_unit[1];
+               return $opts.display_unit_place && $opts.display_unit_place == "after" ? true_value + $opts.display_unit : $opts.display_unit + true_value;
              } 
              else if(typeof $opts.display_masks != "undefined" && $opts.display_masks.length > 0) 
              {
