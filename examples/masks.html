@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+ 
+  <title>Value Masked Range Slider Example</title>
+  
+  <link rel="stylesheet" href="../css/style.css">
+  
+  <script src="../lib/jquery-1.6.2.min.js"></script>
+  <script src="../lib/jquery-ui-1.8.15.custom.min.js"></script>
+  <script src="../src/SteppedRangeSlider.jquery.js"></script>
+</head>
+ 
+<body>
+  <div id="wrapper">
+    <h1>Stepped Range Slider: Units and Masks</h1>
+    <p>Please view source code for details. Here you will learn a simple method of adding units (such as $ or %) to your true slider values.</p>
+    <p>In addition to this, adding display masks, which present a custom value to the user while preserving the 
+    real value for your hidden input fields will be demonstrated.</p>
+    
+    <script>
+    $(function() {
+      
+      //Slider values array should start with Zero (0). Steps in between are how far the handle will jump in relation to the next step
+      slider_values_array = [0,1,2,3,4,5,6,7,8,9];
+      true_values_array   = [1,2,4,8,16,32,64,128,256,512];
+      
+      //Initiate the stepped range slider
+      $("#slider_units_before").steppedRangeSlider({
+        slider_values: slider_values_array,
+        true_values: true_values_array,
+        display_area_class: "display_value_area_one",
+        values: [2,7],
+        display_unit: "$"
+      });
+      
+    });
+    </script>
+    
+    <div class="slider_wrapper">
+      <h2>Simple Units: Before: $</h2>
+      <p>Add the option: <strong>display_unit: "$"</strong></p>
+      
+      <div class="display_value_area_one display_area"></div> <!-- Values are displayed here-->
+      
+      <div id="slider_units_before" class="slider">
+        <div class="slider_body"></div>
+      </div>
+    </div>
+    
+    <script>
+    $(function() {
+      
+      //Slider values array should start with Zero (0). Steps in between are how far the handle will jump in relation to the next step
+      slider_values_array = [0,1,2,3,4,5,6,7,8,9];
+      true_values_array   = [1,2,4,8,16,32,64,128,256,512];
+      
+      //Initiate the stepped range slider
+      $("#slider_units_after").steppedRangeSlider({
+        slider_values: slider_values_array,
+        true_values: true_values_array,
+        display_area_class: "display_value_area_two",
+        values: [1,6],
+        display_unit: "%",
+        display_unit_place: "after"
+      });
+      
+    });
+    </script>
+    
+    <div class="slider_wrapper">
+      <h2>Simple Units: After: %</h2>
+      <p>Add the option: <strong>display_unit: "%"</strong> and <strong>display_unit_place: "after"</strong></p>
+      
+      <div class="display_value_area_two display_area"></div> <!-- Values are displayed here-->
+      
+      <div id="slider_units_after" class="slider">
+        <div class="slider_body"></div>
+      </div>
+    </div>    
+    
+    <script>
+    $(function() {
+      
+      //Slider values array should start with Zero (0). Steps in between are how far the handle will jump in relation to the next step
+      slider_values_array = [0,1,2,3,4,5,6,7,8,9];
+      true_values_array   = [1,2,4,8,16,32,64,128,256,512];
+      
+      //Add your masks here. Be carefull this array has the same number of elements as the slider and true values array, or it will return 0
+      mask_array = ["1 Hour", "2 Hours", "4 Hours", "8 Hours", "16 Hours", "2 Days", "3 Days", "1 Week", "2 Weeks", "1 Month"];
+      
+      //Initiate the stepped range slider
+      $("#slider_masked").steppedRangeSlider({
+        slider_values: slider_values_array,
+        true_values: true_values_array,
+        display_area_class: "display_value_area_three",
+        values: [1,6],
+        hidden_fields: ["masked1", "masked2"],
+        display_masks: mask_array,
+        divider: " up to "
+      });
+      
+    });
+    </script>
+    
+    <div class="slider_wrapper">
+      <h2>Display Masks</h2>
+      <p>Add the option: <strong>display_masks: <i>mask_array</i></strong></p>
+      <p>An array of "masks" may be provided, that will be displayed to the user, while any hidden text fields still get the true values</p>
+      <p>In addtion, a custom <strong>divider</strong> can be set, using: <strong>divider: " up to "</strong></p>
+      
+      <div class="display_value_area_three display_area"></div> <!-- Values are displayed here-->
+      
+      <div id="slider_masked" class="slider">
+        <div class="slider_body"></div>
+      </div>
+      
+      <input type="text" id="masked1" />
+      <input type="text" id="masked2" />
+    </div>
+    
+     <h3><a href="simple.html">View simple examples</a></h3>
+  
+  </div>
+  
+</body>
+</html>  
