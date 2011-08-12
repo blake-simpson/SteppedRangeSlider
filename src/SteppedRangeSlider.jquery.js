@@ -32,8 +32,8 @@
           //update hidden fields, if they are available
           if($opts.hidden_fields)
           {
-            $($opts.hidden_fields[0]).val($obj.getRealValue(value_one));
-            $($opts.hidden_fields[1]).val($obj.getRealValue(value_two)); 
+            $("#" + $opts.hidden_fields[0]).val($obj.getRealValue(value_one));
+            $("#" + $opts.hidden_fields[1]).val($obj.getRealValue(value_two)); 
           }
        }
        
