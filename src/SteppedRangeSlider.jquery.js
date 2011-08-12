@@ -69,7 +69,7 @@
              if(typeof $opts.display_unit != "undefined" && $opts.display_unit.length == 2)
              {
                var true_value = $opts.true_values[i];
-               return $opts.display_unit[0] == "before" ? $opts.display_unit[1] + " " + true_value : true_value + " " + $opts.display_unit[1];
+               return $opts.display_unit[0] == "before" ? $opts.display_unit[1] + true_value : true_value + $opts.display_unit[1];
              } 
              else if(typeof $opts.display_masks != "undefined" && $opts.display_masks.length > 0) 
              {
