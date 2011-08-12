@@ -1,4 +1,7 @@
 // Allow jQuery UI range slides to work with non-linear value steps and multiple sliders per page
+//Author: Blake Simpson
+//Date: 12 August 2011
+//URL: https://github.com/BlakeSimpson/SteppedRangeSlider
 (function($){
    var SteppedRangeSlider = function(element, options)
    {
