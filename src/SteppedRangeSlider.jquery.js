@@ -131,22 +131,22 @@
     }
   };
    
-   //Extend jQuery to add the steppedRangeSlider method
-   $.fn.steppedRangeSlider = function(options)
-   {
-      $options = options;
-      return this.each(function() {
-        var element = $(this);
-        // Return early if this element already has a plugin instance
-        if (element.data('steppedrangeslider')) return;
-        var steppedrangeslider = new SteppedRangeSlider(this, $options);
-        // Store plugin object in this element's data
-        element.data('steppedrangeslider', steppedrangeslider);
-        //create the slider element
-        steppedrangeslider.initSlider();
-        //show the slider values and populate hidden fields
-        steppedrangeslider.displaySliderValue();
-      });
-   };
+  //Extend jQuery to add the steppedRangeSlider method
+  $.fn.steppedRangeSlider = function(options)
+  {
+    $options = options;
+    return this.each(function() {
+      var element = $(this);
+      // Return early if this element already has a plugin instance
+      if (element.data('steppedrangeslider')) return;
+      var steppedrangeslider = new SteppedRangeSlider(this, $options);
+      // Store plugin object in this element's data
+      element.data('steppedrangeslider', steppedrangeslider);
+      //create the slider element
+      steppedrangeslider.initSlider();
+      //show the slider values and populate hidden fields
+      steppedrangeslider.displaySliderValue();
+    });
+  };
    
 })(jQuery);
