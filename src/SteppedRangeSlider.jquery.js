@@ -75,7 +75,7 @@
              } 
              else if(typeof $opts.display_masks != "undefined" && $opts.display_masks.length > 0) 
              {
-                   return $opts.display_masks[i];
+                   return $opts.display_masks[i] || 0;
              } 
              else 
              {
