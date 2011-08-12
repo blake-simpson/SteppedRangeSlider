@@ -1,0 +1,43 @@
+body {
+  background: #f2f2f2;
+  text-align: center;
+  font: 12px Arial, Verdana, sans-serif;
+}
+
+#wrapper {
+  margin: 0 auto;
+  text-align: left;
+  width: 500px;
+  padding: 20px;
+  background: #fff;
+}
+
+.slider_wrapper {
+  position: relative;
+  margin: 70px 0;
+}
+
+.slider {
+  width: 480px;
+  height: 20px;
+  display: inline-block;
+  position: absolute;
+}
+.slider_body {
+  position: absolute;
+  height: 10px;
+  width: 500px;
+  margin: 5px 0 0;
+  background: #ddd;
+}
+
+.ui-slider-handle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #999;
+  outline: none; /* Get rid of ugle Safari/Chrome outlines around handle links */
+}
+.slider .ui-slider-handle:last-child {
+  background: #000;
+}
