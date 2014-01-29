@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>Simple Single Slider Example</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script src="../lib/jquery-1.6.2.min.js"></script>
+  <script src="../lib/jquery-ui-1.8.15.custom.min.js"></script>
+  <script src="../src/steppedSingleSlider.min.jquery.js"></script>
+</head>
+
+<body>
+  <div id="wrapper">
+    <h1>Stepped Single Slider</h1>
+    <p>Please view source code for details</p>
+
+    <script>
+    $(function() {
+
+      //Slider values array should start with Zero (0). Steps in between are how far the handle will jump in relation to the next step
+      slider_values_array = [0,1,2,3,4,5,6,7,8,9];
+      true_values_array   = [1,2,4,8,16,32,64,128,256,512];
+
+      //Initiate the stepped range slider
+      $("#slider_hidden_fields").steppedSingleSlider({
+        slider_values: slider_values_array,
+        true_values: true_values_array,
+        display_area_class: "display_value_area_three",
+        value: [6],
+        hidden_field: "hiddenField"
+      });
+
+    });
+    </script>
+
+    <div class="slider_wrapper">
+      <h2>Populate Form Fields</h2>
+
+      <div class="display_value_area_three display_area"></div> <!-- Values are displayed here-->
+
+      <div id="slider_hidden_fields" class="slider">
+        <div class="slider_body"></div>
+      </div>
+
+      <input type="text" id="hiddenField" />
+    </div>
+
+  </div>
+
+</body>
+</html>
+
