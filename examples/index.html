@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>Simple Slider Example</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script src="../lib/jquery-1.6.2.min.js"></script>
+  <script src="../lib/jquery-ui-1.8.15.custom.min.js"></script>
+  <script src="../src/jquery.steppedSlider.js"></script>
+</head>
+
+<body>
+  <div id="wrapper">
+    <h1>Stepped Slider Examples</h1>
+    <p>Please view source code for details.</p>
+
+
+
+    <script>
+      $(function() {
+        var trueVals = [1,2,4,8,16,32,64,128,256,512];
+
+        //Initiate the stepped range slider
+        $("#slider-single").steppedSlider({
+          trueValues: trueVals,
+          callback: function(slide) {
+            $(".single-value").text(slide.value);
+          }
+        });
+
+      });
+    </script>
+
+    <div class="slider-wrapper">
+      <h2>Single stepped slider</h2>
+      <p class="options">Option: <i>trueValues: [1,2,4,8,16,32,64,128,256,512]</i></p>
+      <p class="current-value">Value: <span class="single-value"></span></p>
+      <div id="slider-single" class="slider">
+        <div class="slider-body"></div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+    <script>
+      $(function() {
+        var trueVals = [1,2,4,8,16,32,64,128,256,512];
+
+        //Initiate the stepped range slider
+        $("#slider-simple").steppedSlider({
+          trueValues: trueVals,
+          range: true,
+          callback: function (slide) {
+            $(".range-left").text(slide.values.left);
+            $(".range-right").text(slide.values.right);
+          }
+        });
+
+      });
+    </script>
+
+    <div class="slider-wrapper">
+      <h2>Stepped range slider</h2>
+      <p class="options">Option: <i>range: true</i></p>
+      <p class="current-value"><span class="range-left"></span> &ndash; <span class="range-right"></span></p>
+
+      <div id="slider-simple" class="slider">
+        <div class="slider-body"></div>
+      </div>
+    </div>
+
+
+
+
+
+
+    <script>
+      $(function() {
+        var trueVals = [1,2,4,8,16,32,64,128,256,512];
+
+        //Initiate the stepped range slider
+        $("#slider-default-values").steppedSlider({
+          trueValues: trueVals,
+          range: true,
+          values: [2,6],
+          callback: function (slide) {
+            $(".defaults-left").text(slide.values.left);
+            $(".defaults-right").text(slide.values.right);
+          }
+        });
+
+      });
+    </script>
+
+    <div class="slider-wrapper">
+      <h2>Default values</h2>
+      <p class="options">
+        Option: <i>values: [2,6]</i>
+        <br />
+        2 and 6 are the array index of the `trueValues`
+      </p>
+      <p class="current-value"><span class="defaults-left"></span> &ndash; <span class="defaults-right"></span></p>
+
+      <div id="slider-default-values" class="slider">
+        <div class="slider-body"></div>
+      </div>
+    </div>
+
+
+  </div>
+</body>
+</html>

@@ -12,7 +12,7 @@ body {
   background: #fff;
 }
 
-.slider_wrapper {
+.slider-wrapper {
   position: relative;
   margin: 40px 0 60px 0;
 }
@@ -23,30 +23,34 @@ body {
   display: inline-block;
   position: absolute;
 }
-.slider_body {
+.slider-body {
   position: absolute;
   height: 10px;
   width: 500px;
   margin: 5px 0 0;
   background: #ccc;
+  border-radius: 5px;
+}
+.current-value {
+  color: #555;
+  font-size: 13px;
+  margin: 0 0 5px 0;
 }
 
 .ui-slider-handle {
   position: absolute;
   width: 20px;
   height: 20px;
-  background: #999;
-  outline: none; /* Get rid of ugle Safari/Chrome outlines around handle links */
-}
-.slider .ui-slider-handle:last-child {
   background: #000;
+  outline: none; /* Get rid of ugly Safari/Chrome outlines around handle links */
+  border-radius: 5px;
 }
 
-.display_area {
+.display-area {
   color: #222;
   font-style: italic;
 }
 
-input[type="text"] {
-  margin-top: 30px;
+.options i {
+  font-weight: bold;
 }
