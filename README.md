@@ -7,6 +7,7 @@ The default jQuery UI slider step values must move in fixed steps, whilst this s
 
 
 ## Example
+
      <script>
       $(function() {
         var trueVals = [1,2,4,8,16,32,64,128,256,512];
@@ -37,4 +38,4 @@ The default jQuery UI slider step values must move in fixed steps, whilst this s
 
 ## Live Example
 
-For more examples, with more features and customisation, please see the HTML file in the /examples/ directory.
+For examples of usage and customisation [view the example live](http://blakesimpson.co.uk/SteppedRangeSlider/examples/) or see the HTML file in the `/examples/` directory.
